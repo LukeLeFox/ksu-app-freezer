@@ -1,0 +1,4 @@
+__pycache__/
+*.py[cod]
+release/*.zip
+release/SHA256SUMS.txt

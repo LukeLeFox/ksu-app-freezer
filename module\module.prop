@@ -1,0 +1,6 @@
+id=ksu_app_freezer
+name=KSU App Freezer
+version=2.1.3
+versionCode=6
+author=LukeLeFox
+description=WebUI generica per congelare e riattivare app utente e di sistema conservando APK e dati.

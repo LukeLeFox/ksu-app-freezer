@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>KSU App Freezer</title>
+  <link rel="stylesheet" href="/internal/insets.css">
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="logo">❄</div>
+      <div>
+        <h1>KSU App Freezer</h1>
+        <div class="subtitle">Congelamento reversibile · APK e dati restano intatti</div>
+      </div>
+      <button id="refresh" class="refresh" aria-label="Aggiorna">↻</button>
+    </header>
+
+    <section class="summary" aria-label="Riepilogo">
+      <div class="metric"><strong id="totalCount">—</strong><span>Installate</span></div>
+      <div class="metric"><strong id="activeCount">—</strong><span>Attive</span></div>
+      <div class="metric"><strong id="frozenCount">—</strong><span>Congelate</span></div>
+    </section>
+
+    <div class="notice">
+      <strong>Attenzione alle app critiche.</strong> Possono essere congelate, ma il telefono potrebbe perdere
+      funzioni essenziali o non avviarsi correttamente. Per procedere serve una conferma aggiuntiva.
+    </div>
+
+    <div class="search-wrap">
+      <span>⌕</span>
+      <input id="search" type="search" placeholder="Cerca nome o package…" autocomplete="off">
+    </div>
+
+    <nav class="filters" aria-label="Filtri">
+      <button class="chip selected" data-filter="all">Tutte</button>
+      <button class="chip" data-filter="active">Attive</button>
+      <button class="chip" data-filter="frozen">Congelate</button>
+      <button class="chip" data-filter="user">Utente</button>
+      <button class="chip" data-filter="system">Sistema</button>
+      <button class="chip" data-filter="critical">Critiche</button>
+    </nav>
+
+    <section id="list" class="list">
+      <div class="loading"><div class="spinner"></div>Caricamento delle app…</div>
+    </section>
+  </main>
+
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <h2 id="modalTitle">Conferma</h2>
+      <p id="modalText"></p>
+      <p id="modalRisk" class="risk"></p>
+      <label id="ackLabel" class="ack">
+        <input id="ack" type="checkbox">
+        <span>Ho compreso il rischio e voglio procedere comunque.</span>
+      </label>
+      <div class="modal-actions">
+        <button id="cancel" class="cancel">Annulla</button>
+        <button id="confirm" class="confirm">Conferma</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js?v=2"></script>
+</body>
+</html>
